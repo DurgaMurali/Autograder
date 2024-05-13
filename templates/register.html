@@ -1,0 +1,86 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <title> Registration Page </title>  
+    <style>   
+        Body {  
+        font-family: Calibri, Helvetica, sans-serif;  
+        background-color: white;  
+        }  
+        button {   
+            background-color: #008CBA;   
+            width: 100%;  
+                color: #FFFFFF;   
+                padding: 15px;   
+                margin: 10px 0px;   
+                border: none;   
+                cursor: pointer;   
+                }   
+        form {   
+                border: 3px solid #f1f1f1;   
+            }   
+        input[type=text], input[type=password], input[type=email] {   
+                width: 100%;   
+                margin: 8px 0;  
+                padding: 12px 20px;   
+                display: inline-block;   
+                border: 2px blue;   
+                box-sizing: border-box;   
+            }  
+        button:hover {   
+                opacity: 0.7;   
+            }     
+                
+            
+        .container {   
+                padding: 25px;   
+                background-color: lightblue;
+                margin: auto;
+                width: 50%;
+                padding: 10px
+            }   
+
+        .textfont {
+            color: #38ACEC;
+            font-family=Calibri
+        }
+
+        .titlefont {
+            color: #38ACEC;
+            font-family=Calibri;
+            margin-top: 0;
+            margin-bottom: 0cm;
+        }
+
+        .messagefont {
+            color: red;
+            font-family=Calibri;
+            margin-bottom: 0cm;
+        }
+
+    </style>   
+</head>    
+<body> 
+    <center> <h2 class="titlefont"> Register </h2> </center> 
+    <center> <h4 class="messagefont"> {{message}} </h4></center>
+
+    <form action = "/register" method="post">  
+        <div class="container">   
+            <label>SJSU Email ID </label>   
+            <input type="email" placeholder="Email" name="email" id="email" pattern=".+@sjsu\.edu$" required> 
+            <label>SJSU ID </label>   
+            <input type="text" placeholder="SJSU ID" name="sjsu_id" id="sjsu_id" required>  
+            <label>First name </label>   
+            <input type="text" placeholder="First Name" name="firstname" id="firstname" required> 
+            <label>Last name </label>   
+            <input type="text" placeholder="Last Name" name="lastname" id="lastname" required> 
+            <label>Password (Enter at least 8 characters. Must contain at least 1 lowercase, uppercase character and a number) </label>   
+            <input type="password" placeholder="Password" name="password_1" id="password_1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <label>ReEnter Password : </label>   
+            <input type="password" placeholder="ReEnter Password" name="password_2" id="password_2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <button type="submit">Register</button>  
+        </div>   
+    </form>  
+</body>     
+</html>

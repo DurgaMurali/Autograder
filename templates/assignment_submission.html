@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Submit Assignment </title>
+        <style>
+            Body {  
+            font-family: Calibri, Helvetica, sans-serif;  
+            background-color: white;  
+            }   
+            
+            input[type=text]{ 
+                    background-color: #BCC6CC   
+                    width: 100%;
+                    color: #000000;   
+                    margin: 8px 0;  
+                    padding: 12px 20px;   
+                    display: inline-block;   
+                    border: 2px blue;   
+                    box-sizing: border-box;   
+                }  
+            input[type=submit] { 
+                    background-color: #007C80;   
+                    width: 25%;
+                    color: #FFFFFF;   
+                    margin: 8px 0;  
+                    padding: 12px 20px;   
+                    display: inline-block;   
+                    border: 2px blue;   
+                    box-sizing: border-box;   
+                }    
+                    
+                
+            .container {     
+                    background-color: lightblue;
+                    margin: auto;
+                    width: 60%;
+                    padding: 10px
+                } 
+
+            .logout {
+                    margin: auto;     
+                    width: 30%;
+                    padding: 10px
+                }
+
+            .textfont {
+            color: #307D7E;
+            font-family=Calibri
+            }  
+
+            .subtextfont {
+            color: #4C787E;
+            font-family=sans-serif
+            } 
+
+            .inputtextfont {
+            font-weight: bold;
+            color: #008080;
+            font-family=sans-serif
+            }
+
+            .code-area {
+            background: white;
+            box-shadow: none;
+            border: solid 1px grey
+            }
+
+            .code-area:focus {
+                background: white;
+                box-shadow: none;
+                border: solid 1px #682773
+            }
+
+            .code-area:active {
+                background: white;
+                color: #000000;
+                box-shadow: none;
+                border: solid 1px #682773
+            }
+
+            .code-area:hover {
+                background: white;
+                color: black;
+                cursor: pointer;
+                border: solid 1px #BA68C8
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <script>
+            function toggleRequired() {
+                var textarea = document.getElementById("code");
+                var fileInput = document.querySelector('input[type="file"]');
+
+                if(textarea.value && fileInput.value)
+                {
+                    textarea.setAttribute("required", "true")
+                    fileInput.setAttribute("required", "true")
+                    alert("Remove code or unselect file");
+                    return;
+                }
+
+                if(!textarea.value && !fileInput.value)
+                {
+                    textarea.setAttribute("required", "true")
+                    fileInput.setAttribute("required", "true")
+                    alert("Add code or select file");
+                    return;
+                }
+
+                if (textarea.value) {
+                    fileInput.removeAttribute("required");
+                }
+
+                if (fileInput.value) {
+                    textarea.removeAttribute("required");
+                }
+
+                
+            }
+        </script>
+
+        <center> <h1 class="textfont"> Assignment - {{problem_name}} </h1></center>
+        <center> <h4 class="textfont"> {{problem}} </h4></center>
+        
+        <form action = "/submit-assignment" method="POST" enctype="multipart/form-data">
+        <div class="container">
+            <label class="inputtextfont">Enter your code here:</label>
+            <textarea class="code-area" rows="15" cols="100" id="code" name="code" oninput="toggleRequired()" required></textarea>
+            <text class="inputtextfont"> Select a file: </text> <input type="file" name="assignment-file" id="assignment-file" onchange="toggleRequired()" required/> 
+            <input class="button" type="submit" value="Submit Assignment" />
+        </div>
+        </form>
+        <br>
+
+    </body>
+</html>

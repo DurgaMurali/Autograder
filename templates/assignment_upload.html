@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Upload Assignment </title>
+    
+        <style>
+            Body {  
+            font-family: Calibri, Helvetica, sans-serif;  
+            background-color: white;  
+            }   
+            
+            input[type=text]{ 
+                    background-color: #BCC6CC   
+                    width: 100%;
+                    color: #000000;   
+                    margin: 8px 0;  
+                    padding: 12px 20px;   
+                    display: inline-block;   
+                    border: 2px blue;   
+                    box-sizing: border-box;   
+                }  
+            input[type=submit] { 
+                    background-color: #007C80;   
+                    width: 25%;
+                    color: #FFFFFF;   
+                    margin: 8px 0;  
+                    padding: 12px 20px;   
+                    display: inline-block;   
+                    border: 2px blue;   
+                    box-sizing: border-box;   
+                }    
+                    
+                
+            .container {     
+                    background-color: lightblue;
+                    margin: auto;
+                    width: 60%;
+                    padding: 10px
+                } 
+
+            .logout {
+                    margin: auto;     
+                    width: 30%;
+                    padding: 10px
+                }
+
+            .textfont {
+            color: #307D7E;
+            font-family=Calibri
+            }  
+
+            .subtextfont {
+            color: #4C787E;
+            font-family=sans-serif
+            } 
+
+            .inputtextfont {
+            font-weight: bold;
+            color: #008080;
+            font-family=sans-serif
+            }
+
+            .code-area {
+            background: white;
+            box-shadow: none;
+            border: solid 1px grey
+            }
+
+            .code-area:focus {
+                background: white;
+                box-shadow: none;
+                border: solid 1px #682773
+            }
+
+            .code-area:active {
+                background: white;
+                color: #000000;
+                box-shadow: none;
+                border: solid 1px #682773
+            }
+
+            .code-area:hover {
+                background: white;
+                color: black;
+                cursor: pointer;
+                border: solid 1px #BA68C8
+            }
+
+        </style>
+    </head>
+
+    <body>
+        
+        <center> <h1 class="textfont"> Upload Assignment </h1></center>
+        <form action = "/upload-assignment" method="POST" enctype="multipart/form-data">
+        <div class="container">
+            <label class="inputtextfont">Enter the assignment name:</label>
+            <input type="text" class="inputtextfont" placeholder="assignment name" id="assignment_name" name="assignment_name" value="" required>
+            <br>
+            <label class="inputtextfont">Enter the assignment description here:</label>
+            <textarea class="code-area" rows="5" cols="100" id="assignment" name="assignment" required></textarea>
+            <label class="inputtextfont">Enter the test cases here:</label>
+            <textarea class="code-area" rows="10" cols="100" id="test" name="test" required></textarea>
+            <label class="inputtextfont">Enter the test case names:</label>
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_01" id="testcase_01" name="testcase_01" value="" required>
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_01_desc" name="tc_01_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_02" id="testcase_02" name="testcase_02" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_02_desc" name="tc_02_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_03" id="testcase_03" name="testcase_03" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_03_desc" name="tc_03_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_04" id="testcase_04" name="testcase_04" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_04_desc" name="tc_04_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_05" id="testcase_05" name="testcase_05" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_05_desc" name="tc_05_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_06" id="testcase_06" name="testcase_06" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_06_desc" name="tc_06_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_07" id="testcase_07" name="testcase_07" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_07_desc" name="tc_07_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_08" id="testcase_08" name="testcase_08" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_08_desc" name="tc_08_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_09" id="testcase_09" name="testcase_09" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_09_desc" name="tc_09_desc" value="">
+            <br>
+            <input type="text" class="inputtextfont" placeholder="test_10" id="testcase_10" name="testcase_10" value="">
+            <input type="text" class="inputtextfont" placeholder="description" id="tc_10_desc" name="tc_10_desc" value="">
+            <br>
+            <input class="button" type="submit" value="Upload Assignment" />
+        </div>
+        </form>
+        <br>
+
+    </body>
+</html>
