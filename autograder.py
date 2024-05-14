@@ -187,7 +187,7 @@ def autograde(folder_path, assignment_file_path):
                     messages.append(message)
                     print("Assertion Error")
                 else:
-                    message = test_name + " [FAIL] " + "Compiler Error"
+                    message = test_name + " [FAIL] " + "Compiler Error" + "\n" + exc.output
                     messages.append(message)
                     failed = True
             except subprocess.TimeoutExpired as exc:
